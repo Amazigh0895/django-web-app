@@ -1,3 +1,18 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from listings.models import Band
+from listings.models import Listing
 
 # Create your views here.
+def hello(request):
+    bands = Band.objects.all()
+    return render(request,
+                   'listings/hello.html', 
+                   {'bands': bands})
+
+def titles(request):
+    listings = Listing.objects.all()
+    return render(request,
+                  'listings/hello.html',
+                  {'listings': listings})
+
