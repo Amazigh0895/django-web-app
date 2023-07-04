@@ -10,9 +10,9 @@ def hello(request):
                    'listings/hello.html', 
                    {'bands': bands})
 
-def titles(request):
+def listings(request):
     listings = Listing.objects.all()
     return render(request,
-                  'listings/hello.html',
+                  'listings/listings.html',
                   {'listings': listings})
 
