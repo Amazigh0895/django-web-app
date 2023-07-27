@@ -20,6 +20,18 @@ from listings import  views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',views.hello),
-    path('listings/',views.listings)
+    path('bands/', views.band_list, name='band-list'),
+    path('bands/<int:id>/', views.band_detail, name='band-detail'),
+    path('bands/add/',views.band_create, name='band-create'),
+    path('bands/<int:id>/update/',views.band_update, name='band-update'),
+    path('bands/<int:id>/delete/',views.band_delete,name='band-delete'),
+    path('listings/', views.listings, name='listing-list'),
+    path('listings/<int:id>/', views.listings_detail, name="listing-detail"),
+    path('listings/add/', views.listings_create, name='listing-create'),
+    path('listings/<int:id>/', views.listings_by_band , name='listings-by-band'),
+    path('listings/<int:id>/update/',views.listings_update, name='listing-update'),
+    path('listings/<int:id>/delete/',views.listings_delete,name='listing-delete'),
+    path('contact/', views.contact, name='contact-us'),
+    path('email_sent',views.email_sent, name="email-sent")
+    
 ]

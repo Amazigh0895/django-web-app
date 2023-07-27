@@ -1,10 +1,13 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
+
+<h1> Mettre a jour l'article</h1>
 <form action="" method="post" novalidate>
 {% csrf_token %}
 {{ form.as_p }}
-<input type="submit" value="Envoyer">
+<input type="submit" value="Mettre a jour">
 </form>
+<a href="{% url 'listing-list' %}">voir la liste des articles</a>
 {% endblock %}
    

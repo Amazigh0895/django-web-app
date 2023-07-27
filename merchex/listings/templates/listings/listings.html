@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> hello Django</h1>
-    <p>Mes titres préférés sont :</p>
-    <ul>
-        {% for listing in listings %}
-        <li>{{listing.title}}</li>
-        {%endfor%}
-    </ul>
-</body>
-</html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1> hello Django</h1>
+<p>Mes titres préférés sont :</p>
+<ul>
+    {% for listing in listings %}
+    <a href="{% url 'listing-detail' listing.id  %} "><li>{{listing.title}}</li></a>
+    {%endfor%}
+    <li><a href="{% url 'band-list' %}">retour voir tout les groupes</a></li>
+    <li><a href="{% url 'listing-create' %}">Creer un article</a></li>
+</ul>
+
+{% endblock %}

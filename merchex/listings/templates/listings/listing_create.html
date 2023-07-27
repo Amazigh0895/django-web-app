@@ -1,10 +1,13 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
+
+<h1> Creer un  nouvel artcile</h1>
 <form action="" method="post" novalidate>
 {% csrf_token %}
 {{ form.as_p }}
-<input type="submit" value="Envoyer">
+<input type="submit" value="Creer">
 </form>
+<a href="{% url 'listing-list' %}">voir la liste des articles</a>
 {% endblock %}
    
